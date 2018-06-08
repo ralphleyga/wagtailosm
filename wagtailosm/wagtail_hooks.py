@@ -1,5 +1,11 @@
 from osm_field.widgets import _get_css, _get_js
-from wagtail.wagtailcore import hooks
+
+# Check wagtail version
+try:
+    from wagtail.wagtailcore import hooks
+except ImportError:
+    from wagtail.core import hooks
+
 from django.conf import settings
 from django.utils.html import format_html_join
 
